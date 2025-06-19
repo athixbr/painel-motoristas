@@ -1,0 +1,47 @@
+/* HEADER */
+.header {
+  background: #34a853;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* TOOLBAR */
+.header-toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* INFO DO HEADER (HORA, USUÁRIO, ETC.) */
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: white;
+}
+
+/* ÍCONES DO HEADER */
+.header-info svg {
+  color: white;
+}
+
+/* NOME DO USUÁRIO */
+.header-user {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+/* BOTÃO DE LOGOUT */
+.header-info .MuiIconButton-root {
+  color: white;
+}
+
+.header-info .MuiIconButton-root:hover {
+  background: rgba(255, 255, 255, 0.1);
+}

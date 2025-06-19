@@ -1,0 +1,21 @@
+.drivers-table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  .drivers-table th, .drivers-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .drivers-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .status {
+    background-color: green;
+    color: white;
+    text-align: center;
+  }
+  

@@ -1,0 +1,181 @@
+/* CSS base e tabela */
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.header {
+  background-color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+#icon {
+  max-width: 100px;
+}
+
+.nav {
+  padding: 15px;
+  text-align: center;
+  background-color: #444;
+  color: #fff;
+}
+
+.container-fluid {
+  padding: 0px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+/* Estilos para a linha de filtros */
+.filter-row input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Cores dos status */
+tr.status-liberado { background-color: #28a745; color: white; }
+tr.status-aguardando { background-color: #007bff; color: white; }
+tr.status-buscar-nfe { background-color: #ffc107; color: black; }
+tr.status-andamento { background-color: #fd7e14; color: white; }
+tr.status-padrao { background-color: #e0e0e0; color: black; }
+
+/* Botão flutuante de pesquisa */
+.floating-search {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-search:hover {
+  background-color: #555;
+}
+
+/* Botão "Veja Mais" */
+.load-more {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 20px auto;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.load-more:hover {
+  background-color: #555;
+}
+
+/* Rodapé */
+.footer {
+  background-color: transparent;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #1B5E20;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+.status-aguarde-liberacao {
+  background-color: yellow;
+  color: black;
+}
+
+.status-liberado-carregamento {
+  background-color: green;
+  color: white;
+}
+
+.status-padrao {
+  background-color: lightgrey;
+  color: black;
+}
+
+.table th, .table td {
+  padding: 10px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .table th:nth-child(3), /* Oculta a coluna Transportadora */
+  .table td:nth-child(3),
+  .table th:nth-child(4), /* Oculta a coluna Empresa */
+  .table td:nth-child(4),
+  .table th:nth-child(5), /* Oculta a coluna NFE */
+  .table td:nth-child(5),
+  .table th:nth-child(6), /* Oculta a coluna Produto */
+  .table td:nth-child(6) {
+    display: none;
+  }
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+.product-counters {
+  margin: 0; /* Remove qualquer margem superior */
+  padding: 10px 0; /* Adicione um pouco de espaçamento interno */
+  text-align: center; /* Centraliza o texto */
+  font-size: 1.2em; /* Aumenta o tamanho da fonte */
+  color: #333; /* Altera a cor do texto para melhor contraste */
+}
+
+.product-counters h2 {
+  font-size: 1em; /* Aumenta o tamanho do título */
+  color: #555; /* Altera a cor do título */
+  margin-bottom: 0.5em; /* Espaçamento abaixo do título */
+}
+
+.product-counters ul {
+  list-style: none; /* Remove o estilo de lista */
+  padding: 0;
+  margin: 0;
+}
+
+.product-counters li {
+  font-weight: bold; /* Negrito para destaque */
+  color: #333; /* Cor do texto */
+}
