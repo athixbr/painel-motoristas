@@ -537,6 +537,10 @@ const handleSalvarPDF = async () => {
 useEffect(() => {
   localStorage.setItem('columnVisibility_embarque', JSON.stringify(columnVisibility));
 }, [columnVisibility]);
+useEffect(() => {
+  localStorage.setItem('columnSizing_embarque', JSON.stringify(columnSizing));
+}, [columnSizing]);
+
 
 
   const columns = [
@@ -854,7 +858,7 @@ useEffect(() => {
   enableColumnResizing
   enableDensityToggle
   enableFullScreenToggle={true}
-  state={{ columnVisibility }}
+state={{ columnVisibility, columnSizing }}
   onColumnVisibilityChange={setColumnVisibility}
   onColumnSizingChange={setColumnSizing}
   muiTableContainerProps={{
