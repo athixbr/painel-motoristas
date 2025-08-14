@@ -57,21 +57,19 @@ const Usuarios = () => {
     setOpenSnackbar(true);
   };
 
-  const handleSalvarUsuario = async () => {
-    try {
-      if (modalType === 'edit') {
-        await axios.put('https://api-motoristas.coopergraos.com.br/usuarios.php', currentUsuario);
-      } else {
-        await axios.post('https://api-motoristas.coopergraos.com.br/usuarios.php', currentUsuario);
-      }
-      fetchUsuarios();
-      handleCloseModal();
-      showSnackbar("Usuário salvo com sucesso!", "success");
-    } catch (error) {
-      console.error('Erro ao salvar usuário:', error);
-      showSnackbar("Erro ao salvar usuário", "error");
-    }
-  };
+const handleSalvarUsuario = async () => {
+  try {
+    await axios.post('https://api-motoristas.coopergraos.com.br/usuarios.php', currentUsuario);
+    fetchUsuarios();
+    handleCloseModal();
+    showSnackbar("Usuário salvo com sucesso!", "success");
+  } catch (error) {
+    console.error('Erro ao salvar usuário:', error);
+    showSnackbar("Erro ao salvar usuário", "error");
+  }
+};
+
+
 
   const handleDelete = async (id) => {
     try {

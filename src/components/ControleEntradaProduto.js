@@ -26,6 +26,26 @@ const [produtos, setProdutos] = useState([]);
 
   const [nivelAcesso, setNivelAcesso] = useState(null);
 
+const [columnSizing, setColumnSizing] = useState(() => {
+  const saved = localStorage.getItem('columnSizing_entrada');
+  return saved ? JSON.parse(saved) : {};
+});
+
+const [columnVisibility, setColumnVisibility] = useState(() => {
+  const saved = localStorage.getItem('columnVisibility_entrada');
+  return saved ? JSON.parse(saved) : {
+    observacao: false,
+  };
+});
+
+useEffect(() => {
+  localStorage.setItem('columnSizing_entrada', JSON.stringify(columnSizing));
+}, [columnSizing]);
+
+useEffect(() => {
+  localStorage.setItem('columnVisibility_entrada', JSON.stringify(columnVisibility));
+}, [columnVisibility]);
+
 
   useEffect(() => {
     const userProfile = JSON.parse(localStorage.getItem('userProfile'));
@@ -396,13 +416,25 @@ const [error, setError] = useState(false);
   enableHiding
   enableColumnResizing
   enableDensityToggle
-  enableFullScreenToggle={true}
-  stateStorageKey="controle_entrada_colunas" // 🧠 persistência no localStorage
+  enableFullScreenToggle
+  columnResizeMode="onEnd"
+  layoutMode="grid-no-grow"
+  state={{
+    columnSizing,
+    columnVisibility
+  }}
+  onColumnSizingChange={setColumnSizing}
+  onColumnVisibilityChange={setColumnVisibility}
   muiTableContainerProps={{
     sx: {
       maxHeight: 'auto',
       overflowX: 'auto',
       width: 'auto',
+    }
+  }}
+  muiTableHeadCellProps={{
+    sx: {
+      minWidth: '100px',
     }
   }}
   muiTableProps={{
@@ -413,12 +445,13 @@ const [error, setError] = useState(false);
     }
   }}
   initialState={{
+      density: 'compact',
+
     pagination: { pageSize: 100 },
-    columnVisibility: {
-      observacao: false,
-    },
+    columnVisibility,
   }}
 />
+
 
 
 
